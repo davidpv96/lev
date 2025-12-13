@@ -1,0 +1,207 @@
+---
+// Sección Contacto
+---
+
+<section id="contacto" class="py-20 lg:py-32 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Encabezado -->
+      <div class="text-center mb-12 contacto-header">
+        <h2 class="contacto-title text-4xl sm:text-5xl lg:text-6xl font-serif text-primary mb-6">
+          Comienza tu transformación
+        </h2>
+        <p class="contacto-subtitle text-lg sm:text-xl font-sans text-primary/80 max-w-2xl mx-auto leading-relaxed">
+          Estamos aquí para ayudarte en tu camino hacia una salud óptima. Contáctanos y descubre cómo podemos trabajar juntos.
+        </p>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="contacto-form-container bg-white p-8 sm:p-12 rounded-2xl border-2 border-primary shadow-lg">
+        <form class="space-y-6" id="contact-form">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Nombre -->
+            <div>
+              <label for="nombre" class="block font-sans text-sm text-primary mb-2">
+                Nombre *
+              </label>
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                required
+                class="w-full px-4 py-3 bg-white border-2 border-primary rounded-full text-primary font-sans focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Tu nombre"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block font-sans text-sm text-primary mb-2">
+                Email *
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 bg-white border-2 border-primary rounded-full text-primary font-sans focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+
+          <!-- Asunto -->
+          <div>
+            <label for="asunto" class="block font-sans text-sm text-primary mb-2">
+              Asunto *
+            </label>
+            <input 
+              type="text" 
+              id="asunto" 
+              name="asunto" 
+              required
+              class="w-full px-4 py-3 bg-white border-2 border-primary rounded-full text-primary font-sans focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+              placeholder="¿En qué podemos ayudarte?"
+            />
+          </div>
+
+          <!-- Mensaje -->
+          <div>
+            <label for="mensaje" class="block font-sans text-sm text-primary mb-2">
+              Mensaje *
+            </label>
+            <textarea 
+              id="mensaje" 
+              name="mensaje" 
+              rows="6"
+              required
+              class="w-full px-4 py-3 bg-white border-2 border-primary rounded-2xl text-primary font-sans focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none"
+              placeholder="Cuéntanos sobre tus objetivos y cómo podemos ayudarte..."
+            ></textarea>
+          </div>
+
+          <!-- Botón enviar -->
+          <div class="pt-4">
+            <button 
+              type="submit"
+              class="w-full sm:w-auto px-8 py-4 bg-primary text-neutral-dark hover:bg-primary/90 transition-all duration-300 font-sans text-base rounded-full shadow-lg hover:shadow-xl"
+            >
+              Enviar mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="mt-12 text-center contacto-info">
+        <p class="font-sans text-primary/70 text-sm mb-4">
+          O contáctanos directamente
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a 
+            href="mailto:info@lev.com" 
+            class="flex items-center text-primary hover:text-secondary transition-colors font-sans"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            info@lev.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  function initContactoAnimations() {
+    const contactoSection = document.querySelector('#contacto');
+    if (!contactoSection) return;
+
+    // Animaciones de entrada para Contacto
+    gsap.fromTo('.contacto-title', 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.contacto-subtitle', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.contacto-form-container', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.contacto-info', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    // Manejo del formulario
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        form.reset();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactoAnimations);
+  } else {
+    initContactoAnimations();
+  }
+</script>
+

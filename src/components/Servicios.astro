@@ -1,0 +1,441 @@
+---
+import AsesoriaCarouselReact from './AsesoriaCarousel';
+import ProgramasNutricionalesCarouselReact from './ProgramasNutricionalesCarousel';
+// Componente Servicios - Sección con información de servicios disponibles
+---
+
+<section id="servicios" class="relative min-h-screen bg-white pt-12 pb-20 lg:pt-16 lg:pb-32">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título -->
+    <div class="text-center mb-8 lg:mb-10">
+      <h2 class="servicios-title text-5xl sm:text-6xl lg:text-7xl font-serif text-primary mb-6">
+        Servicios
+      </h2>
+      <p class="servicios-subtitle text-xl sm:text-2xl font-sans text-primary/70 max-w-3xl mx-auto">
+        Ofrecemos soluciones personalizadas para optimizar tu salud y bienestar
+      </p>
+    </div>
+
+    <!-- Botones Toggle Horizontales -->
+    <div class="max-w-6xl mx-auto mb-12">
+      <div class="flex flex-wrap justify-center gap-4 lg:gap-6 items-start">
+        <!-- Botón Test Epigenéticos -->
+        <div class="flex flex-col items-center relative">
+          <button 
+            class="servicio-toggle-btn active px-8 py-4 bg-primary border-2 border-primary text-white rounded-full font-sans text-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:text-white shadow-md"
+            data-servicio="test-epigenetico"
+          >
+            Test Epigenéticos
+          </button>
+        </div>
+
+        <!-- Botón Programas Nutricionales -->
+        <div class="flex flex-col items-center relative">
+          <button 
+            class="servicio-toggle-btn px-8 py-4 bg-transparent border-2 border-primary text-primary rounded-full font-sans text-lg font-medium transition-all duration-300 hover:bg-primary hover:text-white shadow-sm"
+            data-servicio="programas-nutricionales"
+          >
+            Programas Nutricionales
+          </button>
+        </div>
+
+        <!-- Botón Asesoría Nutricional -->
+        <div class="flex flex-col items-center relative">
+          <button 
+            class="servicio-toggle-btn px-8 py-4 bg-transparent border-2 border-primary text-primary rounded-full font-sans text-lg font-medium transition-all duration-300 hover:bg-primary hover:text-white shadow-sm"
+            data-servicio="asesoria-nutricional"
+          >
+            Asesoría Nutricional
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido de Servicios -->
+    <div class="max-w-6xl mx-auto">
+      <!-- Test Epigenéticos -->
+      <div class="servicio-content active" data-content="test-epigenetico">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="md:max-w-[300px] md:mx-auto lg:max-w-none lg:col-start-2 lg:col-span-1 bg-primary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 ease-out hover:scale-105">
+            <!-- Imagen arriba con título superpuesto -->
+            <div class="w-full h-64 bg-neutral-light relative overflow-hidden">
+              <img 
+                src="/fonts/servicio-test-epigenetico.png" 
+                alt="Test Epigenético" 
+                class="w-full h-full object-cover"
+              />
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <!-- Título en la imagen -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl lg:text-3xl font-serif text-white drop-shadow-lg">Test Epigenético</h4>
+                  <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white/90 flex-shrink-0 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6 lg:p-8">
+              <ul class="space-y-4 mb-6">
+                <li class="flex items-start group">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                  </div>
+                  <span class="text-white/95 font-sans text-base leading-relaxed">Test Epigenético</span>
+                </li>
+                <li class="flex items-start group">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                  </div>
+                  <span class="text-white/95 font-sans text-base leading-relaxed">Interpretación de los resultados</span>
+                </li>
+              </ul>
+              <div class="flex justify-start">
+                <a 
+                  href="/test-epigenetico" 
+                  class="px-8 py-3 bg-white text-primary rounded-full font-sans text-base font-medium transition-all duration-300 hover:bg-neutral-light hover:shadow-lg"
+                >
+                  Realizar Test
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programas Nutricionales con Epigenética -->
+      <div class="servicio-content hidden" data-content="programas-nutricionales">
+        <!-- Carousel para tablets -->
+        <div class="md:block lg:hidden max-w-6xl mx-auto">
+          <ProgramasNutricionalesCarouselReact client:load />
+        </div>
+        <!-- Grid para desktop -->
+        <div class="hidden lg:grid grid-cols-3 gap-6">
+          <!-- Construye T -->
+          <div class="bg-primary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 ease-out hover:scale-105">
+            <!-- Imagen arriba con título superpuesto -->
+            <div class="w-full h-64 bg-neutral-light relative overflow-hidden">
+              <img 
+                src="/fonts/servicio-programa-nutricional-uno.png" 
+                alt="Construye T" 
+                class="w-full h-full object-cover"
+              />
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <!-- Título en la imagen -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl lg:text-3xl font-serif text-white drop-shadow-lg">Construye T</h4>
+                  <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white/90 flex-shrink-0 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6 lg:p-8">
+              <ul class="space-y-4 mb-6">
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">1 Test Epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">Interpretación de test epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">Plan Nutricional + 1 sesión para explicación de plan</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">1 Seguimiento</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">1 evaluación después de los 21 días máximo 30 días</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Level Up -->
+          <div class="bg-primary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 ease-out hover:scale-105">
+            <!-- Imagen arriba con título superpuesto -->
+            <div class="w-full h-64 bg-neutral-light relative overflow-hidden">
+              <img 
+                src="/fonts/servicio-programa-nutricional-dos.png" 
+                alt="Level Up" 
+                class="w-full h-full object-cover"
+              />
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <!-- Título en la imagen -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl lg:text-3xl font-serif text-white drop-shadow-lg">Level Up</h4>
+                  <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white/90 flex-shrink-0 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6 lg:p-8">
+              <ul class="space-y-4 mb-6">
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">1 Test Epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">Interpretación de test epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">2 Plan Nutricional + 2 sesión para explicación de plan</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">2 Seguimiento</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">2 evaluación después de los 21 días máximo 30 días</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Glow uP -->
+          <div class="bg-primary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 ease-out hover:scale-105">
+            <!-- Imagen arriba con título superpuesto -->
+            <div class="w-full h-64 bg-neutral-light relative overflow-hidden">
+              <img 
+                src="/fonts/servicio-programa-nutricional-uno.png" 
+                alt="Glow uP" 
+                class="w-full h-full object-cover"
+              />
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <!-- Título en la imagen -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl lg:text-3xl font-serif text-white drop-shadow-lg">Glow uP</h4>
+                  <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white/90 flex-shrink-0 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6 lg:p-8">
+              <ul class="space-y-4 mb-6">
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">2 Test Epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">2 Interpretación de test epi</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">3 Plan Nutricional + 3 sesión para explicación de plan</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">3 Seguimiento</span>
+              </li>
+              <li class="flex items-start group">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-4 mt-0.5 group-hover:bg-white/30 transition-colors">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <span class="text-white/95 font-sans text-base leading-relaxed">3 evaluación después de los 21 días máximo 30 días</span>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Asesoría Nutricional -->
+      <div class="servicio-content hidden" data-content="asesoria-nutricional">
+        <div class="max-w-6xl mx-auto">
+          <AsesoriaCarouselReact client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initServicios() {
+    // Animación de entrada del título (más sutil)
+    gsap.fromTo('.servicios-title',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#servicios',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        }
+      }
+    );
+
+    gsap.fromTo('.servicios-subtitle',
+      { opacity: 0, y: 10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        delay: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#servicios',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        }
+      }
+    );
+
+    // Toggle de los botones horizontales
+    const toggleButtons = document.querySelectorAll('.servicio-toggle-btn');
+    const servicioContents = document.querySelectorAll('.servicio-content');
+
+    // Animación de entrada del contenido inicial (más sutil)
+    servicioContents.forEach((content, index) => {
+      if (content.classList.contains('active')) {
+        gsap.fromTo(content,
+          { opacity: 0, y: 10 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            delay: 0.4,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#servicios',
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          }
+        );
+      }
+    });
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const servicioId = button.getAttribute('data-servicio');
+        
+        // Actualizar estado de botones
+        toggleButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md', 'border-primary');
+          btn.classList.add('bg-transparent', 'border-2', 'border-primary', 'text-primary', 'shadow-sm');
+          btn.style.color = ''; // Resetear color inline
+        });
+        
+        button.classList.add('active', 'bg-primary', 'border-primary', 'text-white', 'shadow-md');
+        button.classList.remove('bg-transparent', 'text-primary', 'shadow-sm');
+        // Asegurar que el texto sea blanco en hover también
+        button.style.color = 'white';
+        
+        // Ocultar todos los contenidos
+        servicioContents.forEach(content => {
+          content.classList.add('hidden');
+          content.classList.remove('active');
+        });
+        
+        // Mostrar contenido seleccionado
+        const selectedContent = document.querySelector(`[data-content="${servicioId}"]`);
+        if (selectedContent) {
+          selectedContent.classList.remove('hidden');
+          selectedContent.classList.add('active');
+          
+          // Animación de entrada
+          gsap.fromTo(selectedContent,
+            { opacity: 0, y: 20 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: 'power3.out'
+            }
+          );
+        }
+      });
+    });
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServicios);
+  } else {
+    initServicios();
+  }
+
+</script>
+
+<style>
+  .servicio-toggle-btn {
+    min-width: 200px;
+  }
+
+  .servicio-toggle-btn.active {
+    transform: scale(1.05);
+    color: white !important;
+  }
+
+  .servicio-toggle-btn.active:hover {
+    color: white !important;
+  }
+
+  .servicio-content {
+    min-height: 300px;
+  }
+</style>
+

@@ -1,0 +1,10 @@
+.miembros-carousel-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.miembros-carousel-wrapper img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+

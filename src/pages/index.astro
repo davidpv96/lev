@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Pilares from '../components/Pilares.astro';
+import Servicios from '../components/Servicios.astro';
+import Nosotros from '../components/Nosotros.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout title="LEV - Biohacking, Epigenética y Nutrición">
+  <Header />
+  <main>
+    <Hero />
+    <Pilares />
+    <Servicios />
+    <Nosotros />
+    <Contacto />
+    
+    <!-- CTA Section -->
+    <section id="cta-section" class="relative py-16 lg:py-24 bg-primary overflow-hidden">
+      <!-- Imágenes de fondo animadas - Primera fila -->
+      <div class="absolute top-0 left-0 right-0 overflow-hidden pointer-events-none cta-row-1">
+        <div class="cta-background-images flex gap-8 items-start pt-6 md:pt-8">
+          <img 
+            src="/fonts/hero-image-1.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-2.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-test-epigenetico.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-uno.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-dos.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <!-- Duplicar para loop continuo -->
+          <img 
+            src="/fonts/hero-image-1.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-2.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-test-epigenetico.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-uno.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-dos.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+        </div>
+      </div>
+
+      <!-- Imágenes de fondo animadas - Segunda fila -->
+      <div class="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none cta-row-2">
+        <div class="cta-background-images-2 flex gap-8 pb-6 md:pb-8">
+          <img 
+            src="/fonts/servicio-programa-nutricional-dos.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-uno.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-test-epigenetico.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-2.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-1.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <!-- Duplicar para loop continuo -->
+          <img 
+            src="/fonts/servicio-programa-nutricional-dos.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-programa-nutricional-uno.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/servicio-test-epigenetico.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-2.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+          <img 
+            src="/fonts/hero-image-1.png" 
+            alt="" 
+            class="cta-bg-image h-[150px] md:h-[180px] lg:h-[200px] w-auto object-cover rounded-lg opacity-20"
+          />
+        </div>
+      </div>
+      
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="cta-title text-4xl sm:text-5xl lg:text-6xl font-serif text-white mb-6">
+            ¿Listo para conocer tu estado epigenético?
+          </h2>
+          <p class="cta-subtitle text-lg sm:text-xl font-sans text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Agenda tu cita y descubre cómo optimizar tu salud con un enfoque personalizado basado en ciencia.
+          </p>
+          <div class="cta-button flex justify-center">
+            <a 
+              href="/test-epigenetico" 
+              class="px-8 py-4 bg-white text-primary hover:bg-neutral-light transition-all duration-300 font-sans text-lg font-medium rounded-full shadow-lg hover:shadow-xl"
+            >
+              Realizar test
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  function initCtaAnimations() {
+    const ctaSection = document.querySelector('#cta-section');
+    if (!ctaSection) return;
+
+    // Animación de entrada para CTA
+    gsap.fromTo('.cta-title', 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#cta-section',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.cta-subtitle', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: '#cta-section',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.cta-button', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: '#cta-section',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCtaAnimations);
+  } else {
+    initCtaAnimations();
+  }
+
+  // Animación de imágenes de fondo
+  function initCtaBackgroundAnimation() {
+    const backgroundImages = document.querySelector('.cta-background-images');
+    const backgroundImages2 = document.querySelector('.cta-background-images-2');
+    
+    if (backgroundImages) {
+      const totalWidth = backgroundImages.scrollWidth;
+      const halfWidth = totalWidth / 2;
+
+      gsap.to('.cta-background-images', {
+        x: -halfWidth,
+        duration: 60,
+        ease: 'none',
+        repeat: -1,
+      });
+    }
+
+    if (backgroundImages2) {
+      const totalWidth2 = backgroundImages2.scrollWidth;
+      const halfWidth2 = totalWidth2 / 2;
+
+      gsap.to('.cta-background-images-2', {
+        x: -halfWidth2,
+        duration: 65,
+        ease: 'none',
+        repeat: -1,
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCtaBackgroundAnimation);
+  } else {
+    initCtaBackgroundAnimation();
+  }
+</script>
+
+<style>
+  .cta-background-images,
+  .cta-background-images-2 {
+    will-change: transform;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .cta-bg-image {
+    flex-shrink: 0;
+    filter: blur(2px);
+    width: auto;
+    object-fit: cover;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cta-row-1 {
+      top: 0;
+      height: auto;
+    }
+    
+    .cta-row-2 {
+      height: auto;
+    }
+    
+    .cta-bg-image {
+      opacity: 0.15;
+      height: 140px;
+    }
+  }
+</style>
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+

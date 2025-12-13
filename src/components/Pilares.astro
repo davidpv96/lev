@@ -1,0 +1,1219 @@
+---
+// Sección Biohacking, Epigenética y Nutrición con scroll y cambio de contenido
+---
+
+<section id="pilares" class="relative w-full">
+  <!-- Panel combinado: Biohacking y Nutrición -->
+  <div id="biohacking" class="panel-combined relative min-h-screen bg-white w-full">
+    <!-- SVG flotante que baja (oculto en móvil, visible en tablet y desktop) -->
+    <div class="floating-svg hidden md:block absolute w-full h-full pointer-events-none z-10 overflow-visible">
+      <div class="svg-container absolute top-0 right-0 lg:right-1/4 transform lg:translate-x-1/2 overflow-visible">
+        <svg 
+          class="w-80 lg:w-96 h-auto opacity-80"
+          viewBox="0 0 400 600" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          style="overflow: visible;"
+        >
+          <defs>
+            <linearGradient id="dnaGradientCombined" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6a2044" />
+              <stop offset="50%" stop-color="#b29981" />
+              <stop offset="100%" stop-color="#6a2044" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Grupo del ADN (se hace transparente en nutrición) -->
+          <g id="dna-structure">
+            <path 
+              d="M150 0 Q100 100 150 200 Q100 300 150 400 Q100 500 150 600" 
+              stroke="url(#dnaGradientCombined)" 
+              stroke-width="5" 
+              fill="none"
+              stroke-linecap="round"
+            />
+            
+            <path 
+              d="M250 0 Q300 100 250 200 Q300 300 250 400 Q300 500 250 600" 
+              stroke="url(#dnaGradientCombined)" 
+              stroke-width="5" 
+              fill="none"
+              stroke-linecap="round"
+            />
+            
+            <g opacity="0.5">
+              <line x1="150" y1="100" x2="250" y2="100" stroke="#6a2044" stroke-width="3" />
+              <line x1="150" y1="200" x2="250" y2="200" stroke="#b29981" stroke-width="3" />
+              <line x1="150" y1="300" x2="250" y2="300" stroke="#6a2044" stroke-width="3" />
+              <line x1="150" y1="400" x2="250" y2="400" stroke="#b29981" stroke-width="3" />
+              <line x1="150" y1="500" x2="250" y2="500" stroke="#6a2044" stroke-width="3" />
+            </g>
+            
+            <circle cx="150" cy="100" r="10" fill="#6a2044" />
+            <circle cx="250" cy="100" r="10" fill="#b29981" />
+            <circle cx="150" cy="200" r="10" fill="#b29981" />
+            <circle cx="250" cy="200" r="10" fill="#6a2044" />
+            <circle cx="150" cy="300" r="10" fill="#6a2044" />
+            <circle cx="250" cy="300" r="10" fill="#b29981" />
+            <circle cx="150" cy="400" r="10" fill="#b29981" />
+            <circle cx="250" cy="400" r="10" fill="#6a2044" />
+            <circle cx="150" cy="500" r="10" fill="#6a2044" />
+            <circle cx="250" cy="500" r="10" fill="#b29981" />
+          </g>
+          
+          <!-- Elementos decorativos de nutrición (aparecen cuando se cambia a nutrición) -->
+          <g id="nutrition-elements" class="nutrition-svg-elements" opacity="0">
+            
+            <!-- MANZANA - Derecha, nivel superior (más a la derecha) -->
+            <g transform="translate(400, 150)">
+              <path d="M0,16 C-16,16 -22,0 -18,-14 C-15,-24 -6,-26 0,-20 C6,-26 15,-24 18,-14 C22,0 16,16 0,16 Z" fill="#6a2044" />
+              <ellipse cx="-7" cy="-3" rx="3.5" ry="5" fill="#ffffff" opacity="0.15" />
+              <path d="M0,-20 L0,-27" stroke="#b29981" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M2,-25 Q9,-29 11,-24 Q9,-20 5,-22 Z" fill="#b29981" />
+            </g>
+            
+            <!-- PLÁTANO - Izquierda, nivel superior -->
+            <g transform="translate(100, 150)">
+              <path d="M-14,18 Q-20,7 -17,-9 Q-11,-25 2,-27 Q13,-27 17,-20 Q19,-16 11,-14 Q0,-10 -5,4 Q-9,14 -14,18 Z" fill="#b29981" />
+              <path d="M-15,13 Q-17,2 -13,-7" stroke="#6a2044" stroke-width="1.5" opacity="0.25" fill="none" stroke-linecap="round" />
+              <ellipse cx="-9" cy="-4" rx="2.5" ry="5" fill="#ffffff" opacity="0.12" transform="rotate(-25)" />
+            </g>
+            
+            <!-- NARANJA - Derecha, nivel medio (más a la derecha) -->
+            <g transform="translate(400, 300)">
+              <circle cx="0" cy="0" r="20" fill="#b29981" />
+              <ellipse cx="-4" cy="-4" rx="4" ry="6" fill="#ffffff" opacity="0.15" />
+              <circle cx="0" cy="-20" r="2.5" fill="#b29981" />
+              <path d="M0,-23 Q0,-27 3,-29" stroke="#b29981" stroke-width="2" fill="none" stroke-linecap="round" />
+              <path d="M2.5,-27 Q7,-29 8,-25 Q6,-22 3,-24 Z" fill="#b29981" />
+            </g>
+            
+            <!-- AGUACATE - Izquierda, nivel medio -->
+            <g transform="translate(100, 300)">
+              <path d="M0,-25 Q-16,-18 -18,3 Q-16,21 0,27 Q16,21 18,3 Q16,-18 0,-25 Z" fill="#b29981" />
+              <path d="M0,-18 Q-11,-13 -13,3 Q-11,16 0,20 Q11,16 13,3 Q11,-13 0,-18 Z" fill="#6a2044" opacity="0.35" />
+              <ellipse cx="0" cy="5" rx="9" ry="10" fill="#b29981" />
+              <ellipse cx="-2" cy="3" rx="2.5" ry="3.5" fill="#ffffff" opacity="0.2" />
+            </g>
+            
+            <!-- UVAS - Derecha, nivel inferior (más a la derecha) -->
+            <g transform="translate(400, 450)">
+              <circle cx="-7" cy="-9" r="9" fill="#6a2044" />
+              <circle cx="7" cy="-9" r="9" fill="#6a2044" />
+              <circle cx="0" cy="4" r="9" fill="#6a2044" />
+              <circle cx="-9" cy="4" r="7" fill="#6a2044" />
+              <circle cx="9" cy="4" r="7" fill="#6a2044" />
+              <ellipse cx="-5" cy="-11" rx="2" ry="3" fill="#ffffff" opacity="0.15" />
+              <ellipse cx="5" cy="-11" rx="2" ry="3" fill="#ffffff" opacity="0.15" />
+              <ellipse cx="-2" cy="2" rx="2" ry="3" fill="#ffffff" opacity="0.15" />
+              <path d="M0,-18 Q0,-27 5,-29" stroke="#b29981" stroke-width="2" fill="none" stroke-linecap="round" />
+              <path d="M4,-27 Q8,-30 9,-26 Q7,-23 5,-25 Z" fill="#b29981" />
+            </g>
+            
+            <!-- FRESA - Izquierda, nivel inferior -->
+            <g transform="translate(100, 450)">
+              <path d="M0,20 Q-14,13 -15,-4 Q-11,-18 0,-22 Q11,-18 15,-4 Q14,13 0,20 Z" fill="#6a2044" />
+              <circle cx="-5" cy="-7" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="5" cy="-9" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="0" cy="-3" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="-7" cy="2" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="7" cy="0" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="-3" cy="7" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="4" cy="9" r="1.5" fill="#b29981" opacity="0.5" />
+              <circle cx="0" cy="13" r="1.5" fill="#b29981" opacity="0.5" />
+              <path d="M-9,-22 Q-4,-28 0,-24 Q4,-28 9,-22 L6,-20 Q3,-24 0,-21 Q-3,-24 -6,-20 Z" fill="#b29981" />
+              <ellipse cx="-4" cy="-11" rx="2.5" ry="3.5" fill="#ffffff" opacity="0.12" />
+            </g>
+            
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 h-screen flex items-center">
+      <div class="max-w-5xl mx-auto w-full relative">
+        <!-- Contenido de Biohacking -->
+        <div class="content-biohacking">
+          <div class="content-box md:max-w-md lg:max-w-xl">
+            <div class="flex flex-col items-start">
+              <!-- SVG pequeño horizontal arriba del título (visible solo en móvil) - mismo diseño que desktop rotado -->
+              <div class="md:hidden mb-4">
+                <svg 
+                  class="w-64 h-20 opacity-80 svg-mobile-animate"
+                  viewBox="0 0 600 200" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <defs>
+                    <linearGradient id="dnaGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#6a2044" />
+                      <stop offset="50%" stop-color="#b29981" />
+                      <stop offset="100%" stop-color="#6a2044" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- ADN horizontal - mismo diseño que desktop pero rotado 90° -->
+                  <path 
+                    d="M0 50 Q100 100 200 50 Q300 100 400 50 Q500 100 600 50" 
+                    stroke="url(#dnaGradientMobile)" 
+                    stroke-width="5" 
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  
+                  <path 
+                    d="M0 150 Q100 100 200 150 Q300 100 400 150 Q500 100 600 150" 
+                    stroke="url(#dnaGradientMobile)" 
+                    stroke-width="5" 
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  
+                  <!-- Líneas conectoras verticales -->
+                  <g opacity="0.5">
+                    <line x1="100" y1="50" x2="100" y2="150" stroke="#6a2044" stroke-width="3" />
+                    <line x1="200" y1="50" x2="200" y2="150" stroke="#b29981" stroke-width="3" />
+                    <line x1="300" y1="50" x2="300" y2="150" stroke="#6a2044" stroke-width="3" />
+                    <line x1="400" y1="50" x2="400" y2="150" stroke="#b29981" stroke-width="3" />
+                    <line x1="500" y1="50" x2="500" y2="150" stroke="#6a2044" stroke-width="3" />
+                  </g>
+                  
+                  <!-- Círculos en los extremos de las líneas -->
+                  <circle cx="100" cy="50" r="10" fill="#6a2044" />
+                  <circle cx="100" cy="150" r="10" fill="#b29981" />
+                  <circle cx="200" cy="50" r="10" fill="#b29981" />
+                  <circle cx="200" cy="150" r="10" fill="#6a2044" />
+                  <circle cx="300" cy="50" r="10" fill="#6a2044" />
+                  <circle cx="300" cy="150" r="10" fill="#b29981" />
+                  <circle cx="400" cy="50" r="10" fill="#b29981" />
+                  <circle cx="400" cy="150" r="10" fill="#6a2044" />
+                  <circle cx="500" cy="50" r="10" fill="#6a2044" />
+                  <circle cx="500" cy="150" r="10" fill="#b29981" />
+                </svg>
+              </div>
+              
+              <h3 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-primary mb-8">
+                Biohacking
+              </h3>
+            </div>
+            <p class="text-xl sm:text-2xl font-sans text-primary/80 leading-relaxed mb-8">
+              Optimiza tu biología mediante ciencia, tecnología y datos para alcanzar tu máximo potencial físico y mental. Aprende a medir, analizar y mejorar cada aspecto de tu salud.
+            </p>
+            
+            <!-- Iconos conectados del proceso de Biohacking -->
+            <div class="biohacking-flow mt-10 relative">
+              <div class="flex items-center justify-between max-w-lg">
+                <!-- Icono 1: Inicio - Medición -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Medir</span>
+                </div>
+                
+                <!-- Línea conectora 1 -->
+                <div class="flex-1 h-0.5 bg-primary/30 mx-2 relative">
+                  <div class="absolute top-1/2 left-0 w-full h-full bg-primary/20"></div>
+                  <div class="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full transform -translate-y-1/2"></div>
+                </div>
+                
+                <!-- Icono 2: Análisis -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Analizar</span>
+                </div>
+                
+                <!-- Línea conectora 2 -->
+                <div class="flex-1 h-0.5 bg-primary/30 mx-2 relative">
+                  <div class="absolute top-1/2 left-0 w-full h-full bg-primary/20"></div>
+                  <div class="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full transform -translate-y-1/2"></div>
+                </div>
+                
+                <!-- Icono 3: Optimización -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <!-- ADN doble hélice estilizado -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4 Q6 8 8 12 Q6 16 8 20" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4 Q18 8 16 12 Q18 16 16 20" />
+                      <line x1="8" y1="8" x2="16" y2="8" stroke="currentColor" stroke-width="1.5" />
+                      <line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.5" />
+                      <line x1="8" y1="16" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Optimizar</span>
+                </div>
+                
+                <!-- Línea conectora 3 -->
+                <div class="flex-1 h-0.5 bg-primary/30 mx-2 relative">
+                  <div class="absolute top-1/2 left-0 w-full h-full bg-primary/20"></div>
+                  <div class="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full transform -translate-y-1/2"></div>
+                </div>
+                
+                <!-- Icono 4: Resultado - Potencial Máximo -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Resultado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contenido de Nutrición (misma ubicación, oculto inicialmente) -->
+        <div class="content-nutricion absolute top-0 left-0 w-full opacity-0">
+          <div class="content-box md:max-w-md lg:max-w-xl">
+            <div class="flex flex-col items-start">
+              <!-- SVG pequeño horizontal con ADN y frutas arriba del título (visible solo en móvil) -->
+              <div class="md:hidden mb-4">
+                <svg 
+                  class="w-64 h-24 opacity-80 svg-mobile-animate"
+                  viewBox="0 0 600 200" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <defs>
+                    <linearGradient id="dnaGradientNutrition" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#6a2044" />
+                      <stop offset="50%" stop-color="#b29981" />
+                      <stop offset="100%" stop-color="#6a2044" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- ADN horizontal -->
+                  <path 
+                    d="M0 50 Q100 100 200 50 Q300 100 400 50 Q500 100 600 50" 
+                    stroke="url(#dnaGradientNutrition)" 
+                    stroke-width="4" 
+                    fill="none"
+                    stroke-linecap="round"
+                    opacity="0.6"
+                  />
+                  <path 
+                    d="M0 150 Q100 100 200 150 Q300 100 400 150 Q500 100 600 150" 
+                    stroke="url(#dnaGradientNutrition)" 
+                    stroke-width="4" 
+                    fill="none"
+                    stroke-linecap="round"
+                    opacity="0.6"
+                  />
+                  
+                  <!-- Líneas conectoras verticales -->
+                  <g opacity="0.3">
+                    <line x1="100" y1="50" x2="100" y2="150" stroke="#6a2044" stroke-width="2" />
+                    <line x1="200" y1="50" x2="200" y2="150" stroke="#b29981" stroke-width="2" />
+                    <line x1="300" y1="50" x2="300" y2="150" stroke="#6a2044" stroke-width="2" />
+                    <line x1="400" y1="50" x2="400" y2="150" stroke="#b29981" stroke-width="2" />
+                    <line x1="500" y1="50" x2="500" y2="150" stroke="#6a2044" stroke-width="2" />
+                  </g>
+                  
+                  <!-- Círculos del ADN -->
+                  <circle cx="100" cy="50" r="6" fill="#6a2044" opacity="0.6" />
+                  <circle cx="100" cy="150" r="6" fill="#b29981" opacity="0.6" />
+                  <circle cx="200" cy="50" r="6" fill="#b29981" opacity="0.6" />
+                  <circle cx="200" cy="150" r="6" fill="#6a2044" opacity="0.6" />
+                  <circle cx="300" cy="50" r="6" fill="#6a2044" opacity="0.6" />
+                  <circle cx="300" cy="150" r="6" fill="#b29981" opacity="0.6" />
+                  <circle cx="400" cy="50" r="6" fill="#b29981" opacity="0.6" />
+                  <circle cx="400" cy="150" r="6" fill="#6a2044" opacity="0.6" />
+                  <circle cx="500" cy="50" r="6" fill="#6a2044" opacity="0.6" />
+                  <circle cx="500" cy="150" r="6" fill="#b29981" opacity="0.6" />
+                  
+                  <!-- FRUTAS encima del ADN -->
+                  <!-- MANZANA -->
+                  <g transform="translate(50, 100) scale(0.8)">
+                    <path d="M0,16 C-16,16 -22,0 -18,-14 C-15,-24 -6,-26 0,-20 C6,-26 15,-24 18,-14 C22,0 16,16 0,16 Z" fill="#6a2044" />
+                    <path d="M0,-20 L0,-27" stroke="#b29981" stroke-width="2.5" stroke-linecap="round" />
+                  </g>
+                  
+                  <!-- PLÁTANO -->
+                  <g transform="translate(180, 100) scale(0.8)">
+                    <path d="M-14,18 Q-20,7 -17,-9 Q-11,-25 2,-27 Q13,-27 17,-20 Q19,-16 11,-14 Q0,-10 -5,4 Q-9,14 -14,18 Z" fill="#b29981" />
+                  </g>
+                  
+                  <!-- NARANJA -->
+                  <g transform="translate(300, 100) scale(0.8)">
+                    <circle cx="0" cy="0" r="20" fill="#b29981" />
+                    <circle cx="0" cy="-20" r="2.5" fill="#6a2044" />
+                  </g>
+                  
+                  <!-- AGUACATE -->
+                  <g transform="translate(420, 100) scale(0.7)">
+                    <path d="M0,-25 Q-16,-18 -18,3 Q-16,21 0,27 Q16,21 18,3 Q16,-18 0,-25 Z" fill="#b29981" />
+                    <ellipse cx="0" cy="5" rx="9" ry="10" fill="#6a2044" opacity="0.5" />
+                  </g>
+                  
+                  <!-- UVAS -->
+                  <g transform="translate(540, 100) scale(0.7)">
+                    <circle cx="-7" cy="-9" r="9" fill="#6a2044" />
+                    <circle cx="7" cy="-9" r="9" fill="#6a2044" />
+                    <circle cx="0" cy="4" r="9" fill="#6a2044" />
+                    <path d="M0,-18 Q0,-27 5,-29" stroke="#b29981" stroke-width="2" fill="none" stroke-linecap="round" />
+                  </g>
+                </svg>
+              </div>
+              
+              <h3 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-primary mb-8">
+                Nutrición
+              </h3>
+            </div>
+            <p class="text-xl sm:text-2xl font-sans text-primary/80 leading-relaxed mb-8">
+              La nutrición es la base de tu salud. Descubre cómo alimentar tu cuerpo de manera inteligente para maximizar tu energía, rendimiento y bienestar a largo plazo.
+            </p>
+            
+            <!-- Iconos conectados del proceso de Nutrición -->
+            <div class="nutricion-flow mt-10 relative">
+              <div class="flex items-center justify-between max-w-lg">
+                <!-- Icono 1: Planificar -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Planificar</span>
+                </div>
+                
+                <!-- Línea conectora 1 -->
+                <div class="flex-1 h-0.5 bg-primary/30 mx-2 relative">
+                  <div class="absolute top-1/2 left-0 w-full h-full bg-primary/20"></div>
+                  <div class="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full transform -translate-y-1/2"></div>
+                </div>
+                
+                <!-- Icono 2: Nutrir -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Nutrir</span>
+                </div>
+                
+                <!-- Línea conectora 2 -->
+                <div class="flex-1 h-0.5 bg-primary/30 mx-2 relative">
+                  <div class="absolute top-1/2 left-0 w-full h-full bg-primary/20"></div>
+                  <div class="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full transform -translate-y-1/2"></div>
+                </div>
+                
+                <!-- Icono 3: Optimizar -->
+                <div class="flex flex-col items-center relative z-10">
+                  <div class="icon-circle bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-sans text-primary/70 text-center">Optimizar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel de Epigenética -->
+  <div id="epigenetica" class="panel-epigenetica relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
+    <!-- Imagen superpuesta que baja (oculta en móvil) -->
+    <div class="floating-image-epigenetica hidden md:block absolute w-full h-full pointer-events-none z-10">
+      <div class="image-container-epigenetica absolute top-1/2 left-0 lg:left-1/4 transform -translate-y-1/2 lg:-translate-x-1/2">
+        <svg 
+          class="w-80 lg:w-96 h-auto opacity-80 "
+          viewBox="0 0 400 600" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="dnaGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="50%" stop-color="#b29981" />
+              <stop offset="100%" stop-color="#ffffff" />
+            </linearGradient>
+          </defs>
+          
+          <path 
+            d="M150 0 Q100 100 150 200 Q100 300 150 400 Q100 500 150 600" 
+            stroke="url(#dnaGradient2)" 
+            stroke-width="5" 
+            fill="none"
+            stroke-linecap="round"
+          />
+          
+          <path 
+            d="M250 0 Q300 100 250 200 Q300 300 250 400 Q300 500 250 600" 
+            stroke="url(#dnaGradient2)" 
+            stroke-width="5" 
+            fill="none"
+            stroke-linecap="round"
+          />
+          
+          <g opacity="0.5">
+            <line x1="150" y1="100" x2="250" y2="100" stroke="#ffffff" stroke-width="3" />
+            <line x1="150" y1="200" x2="250" y2="200" stroke="#b29981" stroke-width="3" />
+            <line x1="150" y1="300" x2="250" y2="300" stroke="#ffffff" stroke-width="3" />
+            <line x1="150" y1="400" x2="250" y2="400" stroke="#b29981" stroke-width="3" />
+            <line x1="150" y1="500" x2="250" y2="500" stroke="#ffffff" stroke-width="3" />
+          </g>
+          
+          <circle cx="150" cy="100" r="10" fill="#ffffff" />
+          <circle cx="250" cy="100" r="10" fill="#b29981" />
+          <circle cx="150" cy="200" r="10" fill="#b29981" />
+          <circle cx="250" cy="200" r="10" fill="#ffffff" />
+          <circle cx="150" cy="300" r="10" fill="#ffffff" />
+          <circle cx="250" cy="300" r="10" fill="#b29981" />
+          <circle cx="150" cy="400" r="10" fill="#b29981" />
+          <circle cx="250" cy="400" r="10" fill="#ffffff" />
+          <circle cx="150" cy="500" r="10" fill="#ffffff" />
+          <circle cx="250" cy="500" r="10" fill="#b29981" />
+          
+          <!-- Elementos decorativos: Factores epigenéticos alrededor del ADN -->
+          <g id="epigenetics-factors" class="epigenetics-factors" opacity="0">
+            <!-- Dieta - Superior izquierda -->
+            <g transform="translate(90, 90)">
+              <rect x="-45" y="-16" width="90" height="32" rx="16" fill="#ffffff" fill-opacity="0.95" />
+              <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#6a2044">Dieta</text>
+            </g>
+            
+            <!-- Ejercicio - Superior derecha -->
+            <g transform="translate(360, 110)">
+              <rect x="-50" y="-16" width="100" height="32" rx="16" fill="#ffffff" fill-opacity="0.95" />
+              <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#6a2044">Ejercicio</text>
+            </g>
+            
+            <!-- Creencias - Medio izquierda -->
+            <g transform="translate(90, 290)">
+              <rect x="-55" y="-16" width="110" height="32" rx="16" fill="#ffffff" fill-opacity="0.95" />
+              <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#6a2044">Creencias</text>
+            </g>
+            
+            <!-- Emociones - Medio derecha -->
+            <g transform="translate(360, 310)">
+              <rect x="-55" y="-16" width="110" height="32" rx="16" fill="#ffffff" fill-opacity="0.95" />
+              <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#6a2044">Emociones</text>
+            </g>
+            
+            <!-- Ambiente - Inferior izquierda (no encima del ADN) -->
+            <g transform="translate(90, 510)">
+              <rect x="-50" y="-16" width="100" height="32" rx="16" fill="#ffffff" fill-opacity="0.95" />
+              <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#6a2044">Ambiente</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Contenido de Epigenética -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          <!-- Columna izquierda vacía en tablets/desktop (el SVG flotante se ve) -->
+          <div class="hidden md:block"></div>
+          
+          
+          <!-- Texto a la derecha -->
+          <div class="epigenetica-content md:max-w-md lg:max-w-xl">
+            <div class="flex flex-col items-start">
+              <!-- SVG horizontal con ADN y factores arriba del título (visible solo en móvil) -->
+              <div class="md:hidden mb-6 w-full">
+                <svg 
+                  class="w-full h-auto svg-mobile-animate"
+                  viewBox="0 0 400 170" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <defs>
+                    <linearGradient id="dnaGradientEpiMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="50%" stop-color="#b29981" />
+                      <stop offset="100%" stop-color="#ffffff" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- ADN horizontal bien formado -->
+                  <path 
+                    d="M10 70 Q50 95 90 70 Q130 95 170 70 Q210 95 250 70 Q290 95 330 70 Q370 95 390 70" 
+                    stroke="url(#dnaGradientEpiMobile)" 
+                    stroke-width="3" 
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path 
+                    d="M10 100 Q50 75 90 100 Q130 75 170 100 Q210 75 250 100 Q290 75 330 100 Q370 75 390 100" 
+                    stroke="url(#dnaGradientEpiMobile)" 
+                    stroke-width="3" 
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  
+                  <!-- Líneas conectoras verticales -->
+                  <g opacity="0.5">
+                    <line x1="50" y1="70" x2="50" y2="100" stroke="#ffffff" stroke-width="2" />
+                    <line x1="130" y1="70" x2="130" y2="100" stroke="#b29981" stroke-width="2" />
+                    <line x1="210" y1="70" x2="210" y2="100" stroke="#ffffff" stroke-width="2" />
+                    <line x1="290" y1="70" x2="290" y2="100" stroke="#b29981" stroke-width="2" />
+                    <line x1="370" y1="70" x2="370" y2="100" stroke="#ffffff" stroke-width="2" />
+                  </g>
+                  
+                  <!-- Círculos del ADN -->
+                  <circle cx="50" cy="70" r="5" fill="#ffffff" />
+                  <circle cx="50" cy="100" r="5" fill="#b29981" />
+                  <circle cx="130" cy="70" r="5" fill="#b29981" />
+                  <circle cx="130" cy="100" r="5" fill="#ffffff" />
+                  <circle cx="210" cy="70" r="5" fill="#ffffff" />
+                  <circle cx="210" cy="100" r="5" fill="#b29981" />
+                  <circle cx="290" cy="70" r="5" fill="#b29981" />
+                  <circle cx="290" cy="100" r="5" fill="#ffffff" />
+                  <circle cx="370" cy="70" r="5" fill="#ffffff" />
+                  <circle cx="370" cy="100" r="5" fill="#b29981" />
+                  
+                  <!-- Etiquetas de factores epigenéticos - Alternadas arriba y abajo -->
+                  <!-- Dieta - ARRIBA -->
+                  <g transform="translate(40, 28)">
+                    <rect x="-30" y="-14" width="60" height="28" rx="14" fill="#ffffff" />
+                    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#6a2044">Dieta</text>
+                  </g>
+                  
+                  <!-- Ejercicio - ABAJO -->
+                  <g transform="translate(120, 142)">
+                    <rect x="-38" y="-14" width="76" height="28" rx="14" fill="#ffffff" />
+                    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#6a2044">Ejercicio</text>
+                  </g>
+                  
+                  <!-- Creencias - ARRIBA -->
+                  <g transform="translate(200, 28)">
+                    <rect x="-40" y="-14" width="80" height="28" rx="14" fill="#ffffff" />
+                    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#6a2044">Creencias</text>
+                  </g>
+                  
+                  <!-- Emociones - ABAJO -->
+                  <g transform="translate(285, 142)">
+                    <rect x="-42" y="-14" width="84" height="28" rx="14" fill="#ffffff" />
+                    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#6a2044">Emociones</text>
+                  </g>
+                  
+                  <!-- Ambiente - ARRIBA -->
+                  <g transform="translate(362, 28)">
+                    <rect x="-32" y="-14" width="64" height="28" rx="14" fill="#ffffff" />
+                    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#6a2044">Ambiente</text>
+                  </g>
+                </svg>
+              </div>
+              
+              <h3 class="epigenetica-title text-5xl sm:text-6xl lg:text-7xl font-serif text-neutral-dark mb-8">
+                Epigenética
+              </h3>
+            </div>
+            <p class="epigenetica-text text-xl sm:text-2xl font-sans text-neutral-dark/90 leading-relaxed mb-8">
+              Tu ADN no es tu destino. La epigenética estudia cómo factores ambientales, nutricionales y de estilo de vida pueden activar o desactivar genes sin cambiar tu código genético.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a 
+                href="/test-epigenetico" 
+                class="inline-block px-8 py-4 bg-neutral-dark border-2 border-neutral-dark text-primary hover:bg-neutral-dark/90 transition-all duration-300 font-sans text-lg font-medium rounded-full"
+              >
+                Realizar Test
+              </a>
+              <a 
+                href="/#servicios" 
+                class="inline-block px-8 py-4 bg-transparent border-2 border-neutral-dark text-neutral-dark hover:bg-neutral hover:text-primary transition-all duration-300 font-sans text-lg font-medium rounded-full"
+              >
+                Ver Servicios
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .floating-svg,
+  .floating-image-epigenetica {
+    will-change: transform;
+  }
+
+  .svg-container,
+  .image-container-epigenetica {
+    will-change: transform;
+  }
+
+  /* Animación para el SVG de móvil */
+  @keyframes svgFloat {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-5px) scale(1.02);
+    }
+  }
+
+  @keyframes svgPulse {
+    0%, 100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .svg-mobile-animate {
+    animation: svgFloat 3s ease-in-out infinite, svgPulse 2s ease-in-out infinite;
+  }
+
+  .svg-mobile-animate path {
+    animation: svgPulse 2.5s ease-in-out infinite;
+  }
+
+  .svg-mobile-animate circle {
+    animation: svgPulse 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * 0.1s);
+  }
+
+  .content-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  @media (min-width: 768px) {
+    .content-box {
+      padding: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #pilares {
+      width: 100vw;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .panel-combined,
+    .panel-epigenetica {
+      width: 100vw;
+      max-width: 100vw;
+    }
+    
+    .content-box {
+      background: white;
+      backdrop-filter: none;
+      padding: 1rem;
+      border-radius: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .epigenetica-content {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .epigenetica-content {
+    background: rgba(106, 32, 68, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+
+  .content-biohacking,
+  .content-nutricion {
+    transition: opacity 0.6s ease;
+  }
+
+  .biohacking-flow,
+  .nutricion-flow {
+    padding: 1rem 0;
+  }
+
+  .nutricion-flow .flex > div {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .icon-circle {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .biohacking-flow .flex > div {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .epigenetica-title,
+  .epigenetica-text {
+    opacity: 0;
+  }
+
+  .nutrition-svg-elements {
+    opacity: 0;
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+
+  .epigenetics-factors {
+    opacity: 0;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initAnimations() {
+    // ===== PANEL COMBINADO: BIOHACKING Y NUTRICIÓN =====
+    const panelCombined = document.querySelector('.panel-combined');
+    const contentBiohacking = document.querySelector('.content-biohacking');
+    const contentNutricion = document.querySelector('.content-nutricion');
+    
+    if (panelCombined && contentBiohacking && contentNutricion) {
+      // Animación suave de entrada para el título y descripción
+      const biohackingTitle = contentBiohacking.querySelector('h3');
+      const biohackingText = contentBiohacking.querySelector('p');
+      
+      if (biohackingTitle) {
+        gsap.fromTo(biohackingTitle, 
+          { 
+            opacity: 0,
+            y: 20
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '.panel-combined',
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          }
+        );
+      }
+
+      if (biohackingText) {
+        gsap.fromTo(biohackingText, 
+          { 
+            opacity: 0,
+            y: 15
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            delay: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '.panel-combined',
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          }
+        );
+      }
+
+      // Animación de entrada para los iconos del flujo
+      const iconCircles = document.querySelectorAll('.biohacking-flow .icon-circle');
+      const flowConnectors = document.querySelectorAll('.biohacking-flow .flex > div');
+      
+      if (iconCircles.length > 0) {
+        gsap.to(iconCircles, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          delay: 0.4,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.panel-combined',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+      }
+
+      if (flowConnectors.length > 0) {
+        gsap.to(flowConnectors, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          delay: 0.4,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.panel-combined',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+      }
+
+      // Variables para rastrear animaciones
+      let nutricionAnimated = false;
+      
+      // Pin de la sección mientras hace scroll para cambiar contenido
+      ScrollTrigger.create({
+        trigger: '.panel-combined',
+        start: 'top top',
+        end: '+=100%',
+        pin: true,
+        pinSpacing: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          
+          // Calcular cuánto debe bajar el SVG para llegar al final del contenedor
+          const panelHeight = panelCombined.offsetHeight;
+          const svgElement = document.querySelector('.svg-container');
+          const svgHeight = svgElement ? svgElement.offsetHeight : 600;
+          const maxMovement = panelHeight - svgHeight + 30; // Movimiento sutil adicional
+          
+          // Cambio de contenido a mitad del scroll
+          const nutritionElements = document.querySelector('#nutrition-elements');
+          
+          if (progress < 0.5) {
+            // Mostrar Biohacking
+            gsap.to(contentBiohacking, { opacity: 1, duration: 0.3 });
+            gsap.to(contentNutricion, { opacity: 0, duration: 0.3 });
+            // Ocultar elementos de nutrición en el SVG
+            if (nutritionElements) {
+              // Detener animaciones de movimiento antes de ocultar
+              const fruits = nutritionElements.children;
+              Array.from(fruits).forEach((fruit) => {
+                gsap.killTweensOf(fruit);
+              });
+              gsap.to(nutritionElements, { opacity: 0, duration: 0.5, scale: 0.8 });
+            }
+            nutricionAnimated = false; // Reset para que se anime de nuevo cuando vuelva
+          } else {
+            // Mostrar Nutrición
+            gsap.to(contentBiohacking, { opacity: 0, duration: 0.3 });
+            gsap.to(contentNutricion, { opacity: 1, duration: 0.3 });
+            // Mostrar elementos de nutrición en el SVG
+            if (nutritionElements) {
+              gsap.to(nutritionElements, { 
+                opacity: 1, 
+                duration: 0.8, 
+                scale: 1,
+                ease: 'back.out(1.2)'
+              });
+              
+              // Animación de movimiento flotante para las frutas
+              const fruits = nutritionElements.children; // Obtener todos los grupos hijos
+              Array.from(fruits).forEach((fruit, index) => {
+                gsap.to(fruit, {
+                  y: `+=${8 + index * 1.5}`, // Movimiento vertical diferente para cada fruta
+                  rotation: `+=${3 + index * 1}`, // Rotación sutil diferente
+                  duration: 2.5 + index * 0.2, // Duración diferente para crear efecto de ola
+                  ease: 'sine.inOut',
+                  repeat: -1,
+                  yoyo: true,
+                  delay: index * 0.2 // Delay escalonado para efecto de ola
+                });
+              });
+            }
+            
+            // Animación de entrada para Nutrición (solo una vez)
+            if (!nutricionAnimated) {
+              nutricionAnimated = true;
+              
+              const nutricionTitle = contentNutricion.querySelector('h3');
+              const nutricionText = contentNutricion.querySelector('p');
+              const nutricionCircles = document.querySelectorAll('.nutricion-flow .icon-circle');
+              const nutricionConnectors = document.querySelectorAll('.nutricion-flow .flex > div');
+              
+              // Animación del título
+              if (nutricionTitle) {
+                gsap.fromTo(nutricionTitle, 
+                  { opacity: 0, y: 20 },
+                  { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+                );
+              }
+              
+              // Animación del texto
+              if (nutricionText) {
+                gsap.fromTo(nutricionText, 
+                  { opacity: 0, y: 15 },
+                  { opacity: 1, y: 0, duration: 0.9, delay: 0.2, ease: 'power2.out' }
+                );
+              }
+              
+              // Animación de los iconos
+              if (nutricionCircles.length > 0) {
+                gsap.to(nutricionCircles, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  stagger: 0.15,
+                  delay: 0.4,
+                  ease: 'power3.out'
+                });
+              }
+              
+              // Animación de los conectores
+              if (nutricionConnectors.length > 0) {
+                gsap.to(nutricionConnectors, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  stagger: 0.1,
+                  delay: 0.4,
+                  ease: 'power3.out'
+                });
+              }
+            } else {
+              // Si ya se animó, solo asegurar que estén visibles
+              const nutricionCircles = document.querySelectorAll('.nutricion-flow .icon-circle');
+              const nutricionConnectors = document.querySelectorAll('.nutricion-flow .flex > div');
+              gsap.set(nutricionCircles, { opacity: 1, y: 0 });
+              gsap.set(nutricionConnectors, { opacity: 1, y: 0 });
+            }
+          }
+          
+          // Mover el SVG hacia abajo con rotación sutil, calculando dinámicamente para llegar al final
+          gsap.to('.svg-container', {
+            y: progress * maxMovement,
+            rotation: progress * 5,
+            ease: 'none',
+            duration: 0
+          });
+        }
+      });
+    }
+
+    // ===== EPIGENÉTICA =====
+    // Animación de la imagen flotante - baja elegantemente con rotación al otro lado
+    const panelEpigenetica = document.querySelector('.panel-epigenetica');
+    
+    if (panelEpigenetica) {
+      const epigeneticsFactors = document.querySelector('#epigenetics-factors');
+      ScrollTrigger.create({
+        trigger: '.panel-epigenetica',
+        start: 'top top',
+        end: 'bottom top',
+        onUpdate: (self) => {
+          const progress = self.progress;
+          // Calcular cuánto debe bajar el SVG desde el centro
+          const panelHeight = panelEpigenetica.offsetHeight;
+          const svgElement = document.querySelector('.image-container-epigenetica');
+          const svgHeight = svgElement ? svgElement.offsetHeight : 600;
+          // Movimiento desde el centro (0) hacia abajo
+          const maxMovement = (panelHeight / 2) - (svgHeight / 2) + 50;
+          
+          // Aplicar transformación relativa desde el centro
+          gsap.to('.image-container-epigenetica', {
+            y: progress * maxMovement,
+            rotation: progress * -5,
+            ease: 'none',
+            duration: 0
+          });
+          
+          // Desvanecer etiquetas al hacer scroll hacia abajo
+          if (epigeneticsFactors) {
+            // Comenzar a desvanecer después del 30% del scroll
+            const fadeStart = 0.3;
+            const fadeEnd = 0.8;
+            
+            if (progress < fadeStart) {
+              // Completamente visibles al inicio
+              gsap.to(epigeneticsFactors, {
+                opacity: 1,
+                duration: 0.3,
+                ease: 'none'
+              });
+            } else if (progress >= fadeStart && progress <= fadeEnd) {
+              // Desvanecer gradualmente entre fadeStart y fadeEnd
+              const fadeProgress = (progress - fadeStart) / (fadeEnd - fadeStart);
+              const opacity = 1 - fadeProgress;
+              gsap.to(epigeneticsFactors, {
+                opacity: opacity,
+                duration: 0.3,
+                ease: 'none'
+              });
+            } else {
+              // Completamente invisibles después de fadeEnd
+              gsap.to(epigeneticsFactors, {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'none'
+              });
+            }
+          }
+        }
+      });
+    }
+
+    // Animación del texto
+    gsap.fromTo('.epigenetica-title', 
+      { x: 100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.panel-epigenetica',
+          start: 'top 60%',
+          toggleActions: 'play none none reverse',
+        }
+      }
+    );
+
+    gsap.fromTo('.epigenetica-text', 
+      { x: 100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.3,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.panel-epigenetica',
+          start: 'top 60%',
+          toggleActions: 'play none none reverse',
+        }
+      }
+    );
+
+    // Animación de los factores epigenéticos alrededor del ADN
+    const epigeneticsFactorsForAnimation = document.querySelector('#epigenetics-factors');
+    
+    if (epigeneticsFactorsForAnimation) {
+      const factors = Array.from(epigeneticsFactorsForAnimation.children);
+      
+      // Animación de entrada del grupo
+      ScrollTrigger.create({
+        trigger: '.panel-epigenetica',
+        start: 'top 60%',
+        onEnter: () => {
+          // Fade in del grupo
+          gsap.fromTo(epigeneticsFactorsForAnimation,
+            { opacity: 0, scale: 0.9 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              ease: 'power2.out'
+            }
+          );
+          
+          // Animación escalonada para cada factor
+          factors.forEach((factor, index) => {
+            gsap.fromTo(factor,
+              { opacity: 0, scale: 0.8 },
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: 'power2.out',
+                onComplete: () => {
+                  // Iniciar animación flotante (más sutil, mantiene posición más recta) + parpadeo
+                  if (index === factors.length - 1) {
+                    factors.forEach((factor, index) => {
+                      // Animación de movimiento flotante - movimiento más pequeño
+                      gsap.to(factor, {
+                        y: `+=${3 + index * 0.5}`, // Movimiento vertical más pequeño (3-5px en lugar de 8-15px)
+                        rotation: `+=${1 + index * 0.3}`, // Rotación más sutil (1-2 grados)
+                        duration: 3 + index * 0.3, // Duración más lenta para movimiento más suave
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                        delay: index * 0.2 // Delay escalonado para efecto de ola
+                      });
+                      
+                      // Animación de parpadeo/pulsación en opacidad
+                      gsap.to(factor, {
+                        opacity: 0.7,
+                        duration: 2 + index * 0.3,
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                        delay: index * 0.15
+                      });
+                    });
+                  }
+                }
+              }
+            );
+          });
+        },
+        onLeaveBack: () => {
+          // Detener animaciones de movimiento
+          factors.forEach((factor) => {
+            gsap.killTweensOf(factor);
+          });
+          // Ocultar el grupo pero mantener las etiquetas visibles cuando se vuelva a entrar
+          gsap.to(epigeneticsFactorsForAnimation, { opacity: 0, duration: 0.3 });
+        },
+        onEnterBack: () => {
+          // Cuando se vuelve a entrar, mostrar y reiniciar animaciones
+          gsap.to(epigeneticsFactorsForAnimation, { 
+            opacity: 1, 
+            duration: 0.5,
+            onComplete: () => {
+              // Reiniciar animaciones flotantes
+              factors.forEach((factor, index) => {
+                // Asegurar que estén visibles
+                gsap.set(factor, { opacity: 1, scale: 1 });
+                
+                // Reiniciar animación de movimiento flotante - movimiento más pequeño
+                gsap.to(factor, {
+                  y: `+=${3 + index * 0.5}`, // Movimiento vertical más pequeño
+                  rotation: `+=${1 + index * 0.3}`, // Rotación más sutil
+                  duration: 3 + index * 0.3, // Duración más lenta
+                  ease: 'sine.inOut',
+                  repeat: -1,
+                  yoyo: true,
+                  delay: index * 0.2
+                });
+                
+                // Reiniciar animación de parpadeo
+                gsap.to(factor, {
+                  opacity: 0.7,
+                  duration: 2 + index * 0.3,
+                  ease: 'sine.inOut',
+                  repeat: -1,
+                  yoyo: true,
+                  delay: index * 0.15
+                });
+              });
+            }
+          });
+        }
+      });
+    }
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  } else {
+    initAnimations();
+  }
+</script>

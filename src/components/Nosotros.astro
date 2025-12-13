@@ -1,0 +1,140 @@
+---
+import MiembrosCarousel from './MiembrosCarousel.astro';
+---
+
+<section id="nosotros" class="relative bg-primary py-12 lg:py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Título - Primero en tablets, luego en desktop va a la izquierda -->
+      <div class="text-center lg:hidden mb-8">
+        <h2 class="nosotros-title text-4xl sm:text-5xl font-serif text-white leading-tight">
+          Nosotros
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1.7fr] gap-8 lg:gap-12 items-center">
+        <!-- Contenido a la izquierda -->
+        <div class="order-3 md:order-3 lg:order-1 nosotros-content-left">
+          <div class="max-w-lg md:mx-auto lg:mx-0">
+            <!-- Título en desktop -->
+            <h2 class="hidden lg:block nosotros-title-desktop text-4xl sm:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight">
+              Nosotros
+            </h2>
+            <p class="nosotros-text-1 text-base sm:text-lg lg:text-xl font-sans text-white/90 leading-relaxed mb-4 text-center md:text-center lg:text-left">
+              En LEV, nos especializamos en biohacking, epigenética y nutrición personalizada. Nuestro propósito es brindarte las herramientas científicas y prácticas necesarias para que comprendas tu biología única, optimices tu bienestar y tomes decisiones informadas sobre tu salud. Creemos en honrar y potenciar tu cuerpo como el increíble sistema que es, aprendiendo a escuchar sus señales y trabajar en armonía con tu naturaleza, no en su contra.
+            </p>
+            <p class="nosotros-text-2 text-base sm:text-lg font-sans text-white leading-relaxed mt-6 text-center md:text-center lg:text-left">
+              <span class="font-semibold text-neutral">Encuéntranos en:</span> <span class="font-medium text-white">Surco, San Isidro y Magdalena</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Carrusel - Segundo en tablets, a la derecha en desktop -->
+        <div class="order-2 md:order-2 lg:order-2 nosotros-content-right">
+          <div class="md:max-w-md md:mx-auto lg:max-w-none">
+            <MiembrosCarousel />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  function initNosotrosAnimations() {
+    const nosotrosSection = document.querySelector('#nosotros');
+    if (!nosotrosSection) return;
+
+    // Animaciones de entrada para Nosotros - Título (tablets)
+    gsap.fromTo('.nosotros-title', 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#nosotros',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    // Animaciones de entrada para Nosotros - Título (desktop)
+    gsap.fromTo('.nosotros-title-desktop', 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#nosotros',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.nosotros-text-1', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: '#nosotros',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.nosotros-text-2', 
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: '#nosotros',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.nosotros-content-right', 
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: '#nosotros',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNosotrosAnimations);
+  } else {
+    initNosotrosAnimations();
+  }
+</script>
+

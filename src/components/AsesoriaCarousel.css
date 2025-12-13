@@ -1,0 +1,27 @@
+/* Estilos para la paginación del carrusel de asesoría */
+.asesoria-carousel .swiper-pagination {
+  bottom: 0 !important;
+  position: relative !important;
+  margin-top: 30px !important;
+}
+
+.asesoria-carousel .swiper-pagination-bullet {
+  width: 50px !important;
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: #6a2044 !important;
+  opacity: 0.4 !important;
+  transition: all 0.3s ease !important;
+  margin: 0 6px !important;
+}
+
+.asesoria-carousel .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  width: 60px !important;
+  background: #6a2044 !important;
+}
+
+.asesoria-carousel .swiper-pagination-bullet:hover {
+  opacity: 0.8 !important;
+}
+
