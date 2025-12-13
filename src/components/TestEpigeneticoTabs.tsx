@@ -89,7 +89,7 @@ export default function TestEpigeneticoTabs() {
     { id: 'preguntas', label: 'Preguntas frecuentes' },
   ];
   
-  const resultImages = [
+  const resultImages: string[] = [
     '/fonts/hero-image-1.png',
     '/fonts/hero-image-2.png',
     '/fonts/servicio-test-epigenetico.png',
