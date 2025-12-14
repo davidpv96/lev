@@ -43,14 +43,26 @@ export default function HeroCarousel() {
         allowTouchMove={true}
       >
         <SwiperSlide>
+          {/* Imagen móvil */}
           <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            className="w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
+            style={{ backgroundImage: "url('/fonts/imagen-portada-1-movil.jpeg')" }}
+          />
+          {/* Imagen desktop/tablet */}
+          <div
+            className="hidden md:block w-full h-full bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url('/fonts/hero-image-1.png')" }}
           />
         </SwiperSlide>
         <SwiperSlide>
+          {/* Imagen móvil */}
           <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            className="w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
+            style={{ backgroundImage: "url('/fonts/portada-2-movil.png')" }}
+          />
+          {/* Imagen desktop/tablet */}
+          <div
+            className="hidden md:block w-full h-full bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url('/fonts/hero-image-2.png')" }}
           />
         </SwiperSlide>
